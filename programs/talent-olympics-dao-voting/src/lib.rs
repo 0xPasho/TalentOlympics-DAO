@@ -12,7 +12,7 @@ pub use state::*;
 declare_id!("5KqPscmVdEYJ9HmQdymcBvpfi515debCGUmpgoH6sEn4");
 
 #[program]
-pub mod talent_olympics_voting {
+pub mod dao_voting {
     use super::*;
 
     pub fn create_proposal(

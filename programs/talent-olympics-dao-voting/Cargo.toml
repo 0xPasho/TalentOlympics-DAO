@@ -1,12 +1,12 @@
 [package]
-name = "talent-olympics-dao-voting by 0xPasho"
+name = "dao-voting"
 version = "0.1.0"
-description = "Created with Anchor by 0xPasho"
+description = "Created with Anchor"
 edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "talent_olympics_dao_voting"
+name = "dao_voting"
 
 [features]
 default = []

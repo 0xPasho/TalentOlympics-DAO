@@ -12,7 +12,7 @@ pub struct CreateProposal<'info> {
         payer = user,
         seeds = [PROPOSAL_IDENTIFIER, proposal_id.to_le_bytes().as_ref()],
         bump,
-        space = HEADER_SIZE + Proposal::INITIAL_SIZE
+        space = HEADER_SIZE + Proposal::INIT_SPACE
     )]
     pub proposal: Account<'info, Proposal>,
     pub system_program: Program<'info, System>,

@@ -3,7 +3,7 @@ use anchor_lang::prelude::*;
 use crate::error::CustomError;
 
 #[account]
-#[derive(InitialSize)]
+#[derive(InitSpace)]
 pub struct User {
     pub score: u64,
 }

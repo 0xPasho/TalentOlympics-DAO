@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-use crate::{error::CustomError, Member, Proposal, HEADER_SIZE, MEMBER_IDENTIFIER, PROPOSAL_IDENTIFIER};
+use crate::{error::CustomError, User, Proposal, HEADER_SIZE, MEMBER_IDENTIFIER, PROPOSAL_IDENTIFIER};
 
 #[derive(Accounts)]
 #[instruction(proposal_id: u64)]
@@ -17,10 +17,10 @@ pub struct SubmitVote<'info> {
         init_if_needed,
         payer = participant,
         seeds = [MEMBER_IDENTIFIER, participant.key().as_ref()],
-        space = HEADER_SIZE + Member::INITIAL_SIZE,
+        space = HEADER_SIZE + User::INIT_SPACE,
         bump
     )]
-    pub member: Account<'info, Member>,
+    pub user: Account<'info, User>,
     pub system_program: Program<'info, System>,
 }
 
@@ -50,7 +50,7 @@ impl<'info> SubmitVote<'info> {
                 .ok_or(CustomError::ArithmeticOverflow)?;
         }
 
-        self.member.increment_points(1)?;
+        self.user.increment_points(1)?;
         Ok(())
     }
 }

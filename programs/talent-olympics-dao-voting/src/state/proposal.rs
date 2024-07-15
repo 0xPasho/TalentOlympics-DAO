@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 
 #[account]
-#[derive(InitialSize)]
+#[derive(InitSpace)]
 pub struct Proposal {
     pub id: u64,
     pub creator: Pubkey,

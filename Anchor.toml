@@ -5,7 +5,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-talent_olympics_dao_voting = "5KqPscmVdEYJ9HmQdymcBvpfi515debCGUmpgoH6sEn4"
+dao_voting = "5KqPscmVdEYJ9HmQdymcBvpfi515debCGUmpgoH6sEn4"
 
 [registry]
 url = "https://api.apr.dev"
